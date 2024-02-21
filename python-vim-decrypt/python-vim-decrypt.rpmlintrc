@@ -1,0 +1,3 @@
+# wording copied from PyPi
+addFilter("python-vim-decrypt.src: E: spelling-error *")
+addFilter("python3-vim-decrypt.noarch: E: spelling-error *")
