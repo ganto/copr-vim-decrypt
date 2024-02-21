@@ -56,6 +56,9 @@ Summary:            %{sum}
 %{python3_sitelib}/__pycache__/*
 
 %changelog
+* Wed Feb 21 2024 Reto Gantenbein <reto.gantenbein@linuxmonk.ch>
+- Adjust Fedora package to build with EPEL
+
 * Fri Jan 26 2024 Fedora Release Engineering <releng@fedoraproject.org> - 0.6.1-26
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild
 
