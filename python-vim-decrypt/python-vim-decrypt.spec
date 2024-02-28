@@ -2,7 +2,7 @@
 
 Name:           python-%{srcname}
 Version:        2.0.0
-Release:        0.1%{?dist}
+Release:        0.2%{?dist}
 Summary:        Command line tool for decrypting vim-blowfish-encrypted files
 License:        GPL-3.0-or-later
 URL:            https://github.com/gertjanvanzwieten/vimdecrypt
@@ -14,7 +14,7 @@ Source2:        vim-decrypt
 BuildArch:      noarch
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
-%if !0%{?rhel}
+%if !0%{?rhel} && !0%{?amzn}
 BuildRequires:  python3-pip
 BuildRequires:  python3-wheel
 %endif
@@ -44,14 +44,14 @@ cp %{SOURCE2} vim-decrypt
 %endif
 
 %build
-%if !0%{?rhel}
+%if !0%{?rhel} && !0%{?amzn}
 %pyproject_wheel
 %else
 %py3_build
 %endif
 
 %install
-%if !0%{?rhel}
+%if !0%{?rhel} && !0%{?amzn}
 %pyproject_install
 %else
 %py3_install
