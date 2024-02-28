@@ -72,6 +72,9 @@ sed --in-place '/#!\/usr\/bin\/env/d' %{buildroot}%{python3_sitelib}/vimdecrypt.
 %exclude %{python3_sitelib}/test_vimdecrypt.py
 
 %changelog
+* Wed Feb 28 2024 Reto Gantenbein <reto.gantenbein@linuxmonk.ch>
+- Fix build for Amazon Linux
+
 * Thu Feb 22 2024 Reto Gantenbein <reto.gantenbein@linuxmonk.ch> 2.0.0-0.1
 - Initial package
 
