@@ -72,6 +72,9 @@ sed --in-place '/#!\/usr\/bin\/env/d' %{buildroot}%{python3_sitelib}/vimdecrypt.
 %exclude %{python3_sitelib}/test_vimdecrypt.py
 
 %changelog
+* Thu Feb 29 2024 Reto Gantenbein <reto.gantenbein@linuxmonk.ch>
+- Ensure Amazon Linux use custom build files
+
 * Wed Feb 28 2024 Reto Gantenbein <reto.gantenbein@linuxmonk.ch> 2.0.0-0.2
 - Fix build for Amazon Linux
 
