@@ -2,7 +2,7 @@
 
 Name:           python-%{srcname}
 Version:        2.0.0
-Release:        0.2%{?dist}
+Release:        0.3%{?dist}
 Summary:        Command line tool for decrypting vim-blowfish-encrypted files
 License:        GPL-3.0-or-later
 URL:            https://github.com/gertjanvanzwieten/vimdecrypt
@@ -38,7 +38,7 @@ Requires:       python3-blowfish
 %autosetup -p1 -n %{srcname}-%{version}
 # RHEL 8 doesn't support pyproject yet
 # RHEL 9 supports pyproject but cannot properly build this release
-%if 0%{?rhel}
+%if 0%{?rhel} && !0%{?amzn}
 cp %{SOURCE1} setup.py
 cp %{SOURCE2} vim-decrypt
 %endif
@@ -72,7 +72,7 @@ sed --in-place '/#!\/usr\/bin\/env/d' %{buildroot}%{python3_sitelib}/vimdecrypt.
 %exclude %{python3_sitelib}/test_vimdecrypt.py
 
 %changelog
-* Wed Feb 28 2024 Reto Gantenbein <reto.gantenbein@linuxmonk.ch>
+* Wed Feb 28 2024 Reto Gantenbein <reto.gantenbein@linuxmonk.ch> 2.0.0-0.2
 - Fix build for Amazon Linux
 
 * Thu Feb 22 2024 Reto Gantenbein <reto.gantenbein@linuxmonk.ch> 2.0.0-0.1
