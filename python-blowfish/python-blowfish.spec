@@ -5,7 +5,7 @@
 
 Name:               python-blowfish
 Version:            0.6.1
-Release:            0.26%{?dist}
+Release:            0.27%{?dist}
 Summary:            %{sum}
 
 License:            GPL-3.0-or-later
@@ -56,6 +56,9 @@ Summary:            %{sum}
 %{python3_sitelib}/__pycache__/*
 
 %changelog
+* Sun Nov 24 2024 Reto Gantenbein <reto.gantenbein@linuxmonk.ch> 0.6.1-0.27
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_41_Mass_Rebuild
+
 * Wed Feb 21 2024 Reto Gantenbein <reto.gantenbein@linuxmonk.ch>
 - Adjust Fedora package to build with EPEL
 
