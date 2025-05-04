@@ -2,7 +2,7 @@
 
 Name:           python-%{srcname}
 Version:        2.0.0
-Release:        0.3%{?dist}
+Release:        0.4%{?dist}
 Summary:        Command line tool for decrypting vim-blowfish-encrypted files
 License:        GPL-3.0-or-later
 URL:            https://github.com/gertjanvanzwieten/vimdecrypt
@@ -14,9 +14,10 @@ Source2:        vim-decrypt
 BuildArch:      noarch
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
-%if !0%{?rhel} && !0%{?amzn}
+%if 0%{?fedora} || 0%{?amzn} || (0%{?rhel} && 0%{?rhel} >= 10)
 BuildRequires:  python3-pip
 BuildRequires:  python3-wheel
+BuildRequires:  pyproject-rpm-macros
 %endif
 BuildRequires:  python3dist(pytest)
 BuildRequires:  python3-blowfish
@@ -38,20 +39,20 @@ Requires:       python3-blowfish
 %autosetup -p1 -n %{srcname}-%{version}
 # RHEL 8 doesn't support pyproject yet
 # RHEL 9 supports pyproject but cannot properly build this release
-%if 0%{?rhel} && !0%{?amzn}
+%if 0%{?amzn} || (0%{?rhel} && 0%{?rhel} <= 9)
 cp %{SOURCE1} setup.py
 cp %{SOURCE2} vim-decrypt
 %endif
 
 %build
-%if !0%{?rhel} && !0%{?amzn}
+%if 0%{?fedora} || (0%{?rhel} && 0%{?rhel} >= 10)
 %pyproject_wheel
 %else
 %py3_build
 %endif
 
 %install
-%if !0%{?rhel} && !0%{?amzn}
+%if 0%{?fedora} || (0%{?rhel} && 0%{?rhel} >= 10)
 %pyproject_install
 %else
 %py3_install
