@@ -59,6 +59,9 @@ Summary:            %{sum}
 %{python3_sitelib}/__pycache__/*
 
 %changelog
+* Sun May 04 2025 Reto Gantenbein <reto.gantenbein@linuxmonk.ch> 0.6.1-0.28
+- Fix build for el10
+
 * Sun Nov 24 2024 Reto Gantenbein <reto.gantenbein@linuxmonk.ch> 0.6.1-0.27
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_41_Mass_Rebuild
 
