@@ -5,7 +5,7 @@
 
 Name:               python-blowfish
 Version:            0.6.1
-Release:            0.27%{?dist}
+Release:            0.28%{?dist}
 Summary:            %{sum}
 
 License:            GPL-3.0-or-later
@@ -17,6 +17,9 @@ BuildRequires:      python3-devel
 BuildRequires:      python3-setuptools
 BuildRequires:      python3-pip
 BuildRequires:      python3-wheel
+%if !(0%{?rhel} <= 8)
+BuildRequires:      pyproject-rpm-macros
+%endif
 
 %description
 %{sum}.
