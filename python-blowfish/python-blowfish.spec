@@ -5,7 +5,7 @@
 
 Name:               python-blowfish
 Version:            0.6.1
-Release:            0.28%{?dist}
+Release:            0.29%{?dist}
 Summary:            %{sum}
 
 License:            GPL-3.0-or-later
@@ -59,6 +59,9 @@ Summary:            %{sum}
 %{python3_sitelib}/__pycache__/*
 
 %changelog
+* Sun Jun 28 2026 Reto Gantenbein <reto.gantenbein@linuxmonk.ch> 0.6.1-0.29
+- Rebuild for Fedora 43 and 44
+
 * Sun May 04 2025 Reto Gantenbein <reto.gantenbein@linuxmonk.ch> 0.6.1-0.28
 - Fix build for el10
 
