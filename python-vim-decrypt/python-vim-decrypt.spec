@@ -2,7 +2,7 @@
 
 Name:           python-%{srcname}
 Version:        2.0.0
-Release:        0.4%{?dist}
+Release:        0.5%{?dist}
 Summary:        Command line tool for decrypting vim-blowfish-encrypted files
 License:        GPL-3.0-or-later
 URL:            https://github.com/gertjanvanzwieten/vimdecrypt
@@ -60,6 +60,8 @@ cp %{SOURCE2} vim-decrypt
 
 # fix rpmlint: non-executable-script
 sed --in-place '/#!\/usr\/bin\/env/d' %{buildroot}%{python3_sitelib}/vimdecrypt.py
+# add compatibility symlink
+ln -s vim-decrypt %{buildroot}%{_bindir}/vimdecrypt
 
 %check
 %pytest
@@ -73,6 +75,9 @@ sed --in-place '/#!\/usr\/bin\/env/d' %{buildroot}%{python3_sitelib}/vimdecrypt.
 %exclude %{python3_sitelib}/test_vimdecrypt.py
 
 %changelog
+* Sun Jun 28 2026 Reto Gantenbein <reto.gantenbein@linuxmonk.ch> 2.0.0-0.5
+- Add /usr/bin/vimdecrypt symlink to /usr/bin/vim-decrypt
+
 * Sun May 04 2025 Reto Gantenbein <reto.gantenbein@linuxmonk.ch> 2.0.0-0.4
 - Fix build for Amazon Linux and el10
 
