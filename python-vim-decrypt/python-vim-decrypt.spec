@@ -76,6 +76,7 @@ ln -s vim-decrypt %{buildroot}%{_bindir}/vimdecrypt
 
 %changelog
 * Sun Jun 28 2026 Reto Gantenbein <reto.gantenbein@linuxmonk.ch> 2.0.0-0.5
+- Rebuild for Fedora 43 and 44
 - Add /usr/bin/vimdecrypt symlink to /usr/bin/vim-decrypt
 
 * Sun May 04 2025 Reto Gantenbein <reto.gantenbein@linuxmonk.ch> 2.0.0-0.4
